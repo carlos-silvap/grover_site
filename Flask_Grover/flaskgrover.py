@@ -7,8 +7,16 @@ def home():
     return render_template('home.html')
 
 @app.route("/UMA")
-def about():
+def UMA():
     return render_template('UMA.html', title='UMA')
+
+@app.route("/livestream")
+def livestream():
+    return render_template('livestream.html', title='Live')
+
+@app.route("/about")
+def about():
+    return render_template('about.html', title='About')
 
 if __name__ == '__main__':
     app.run(debug=True)
