@@ -5,60 +5,94 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <style>
+            h1 {text-align: center;
+            }
+            .img-container {
+            text-align: center;
+            }
+            .bg-steel {
+            background-color: #72863f;
+            }
+            img {
+            vertical-align: middle;
+            }
+    </style>
 
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
         <title>Home</title>
     {% endif %}
+
 </head>
 <body>
-<header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="/">Grover</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="/">Home</a>
-              <a class="nav-item nav-link" href="/UMA">UMA</a>
-              <a class="nav-item nav-link" href="/livestream">Live</a>
-              <a class="nav-item nav-link" href="/about">About</a>
-            </div>
-          </div>
+
+
+ <div class="navbar-fixed">
+    <nav class="bg-steel">
+      <div class="nav-wrapper container">
+
+        <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="sidenav" id="menu-responsive">
+            <li><a href="{{ url_for ('UMA') }}">UMA</a></li>
+            <li><a href="{{ url_for ('livestream') }}">Live</a></li>
+            <li><a href="{{ url_for ('about') }}">About</a></li>
+        </ul>
+        <div>
+        <a href="{{ url_for ('home') }}" class="brand-logo" > <img class="responsive-img"
+            width="175px"  height="45px" id="logo" src="static/images/GroverWhite.png"/></a>
         </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for ('UMA') }}">UMA</a></li>
+            <li><a href="{{ url_for ('livestream') }}">Live</a></li>
+            <li><a href="{{ url_for ('about') }}">About</a></li>
+          <li>
+            <a href="#" class="dropdown-trigger" data-target="id_drop">
+              Documentación
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+              <ul class="dropdown-content" id="id_drop">
+                 <li><a class="black-text" href="#">Simulación</a></li>
+                 <li><a href="#">Turtlebot</a></li>
+                 <li><a href="#">Pretotipo</a></li>
               </ul>
-            </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
+    </nav>
+  </div>
+
+    <main role="main" class="container">
+
+
+        <body>
+            {% block content %}{% endblock %}
+
+
+        </body>
     </main>
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+         M.AutoInit();
+  });
+    </script>
 </body>
 </html>
