@@ -18,7 +18,7 @@
             .img-container {
             text-align: center;
             }
-            .bg-steel {
+            .green-grover {
             background-color: #72863f;
             }
             img {
@@ -34,10 +34,8 @@
 
 </head>
 <body>
-
-
  <div class="navbar-fixed">
-    <nav class="bg-steel">
+    <nav class="green-grover">
       <div class="nav-wrapper container">
 
         <a href="#" data-target="menu-responsive" class="sidenav-trigger">
@@ -63,8 +61,11 @@
             </a>
               <ul class="dropdown-content" id="id_drop">
                  <li><a class="black-text" href="#">Simulación</a></li>
+                  <li class="divider"></li>
                  <li><a href="#">Turtlebot</a></li>
+                  <li class="divider"></li>
                  <li><a href="#">Pretotipo</a></li>
+                  <li class="divider"></li>
               </ul>
           </li>
         </ul>
@@ -73,16 +74,18 @@
   </div>
 
     <main role="main" class="container">
-
-
-        <body>
             {% block content %}{% endblock %}
-
-
-        </body>
     </main>
 
-
+ <footer class="page-footer green-grover">
+     <div class="footer-copyright">
+         <div class="container">
+            © 2020 Smart Industries
+            <a class="grey-text text-lighten-4 right" href="#!">drone-x.com</a>
+            <a class="grey-text text-lighten-4 right" href="#!">sensum.com &nbsp</a>
+         </div>
+     </div>
+</footer>
 
 
     <!-- Optional JavaScript -->
