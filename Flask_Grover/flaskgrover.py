@@ -18,5 +18,13 @@ def livestream():
 def about():
     return render_template('about.html', title='About')
 
+@app.route("/concept")
+def concept():
+    return render_template('concept.html', title='Pruebas de concepto')
+
+@app.route("/sim")
+def sim():
+    return render_template('sim.html', title='Simulación')
+
 if __name__ == '__main__':
     app.run(debug=True)
